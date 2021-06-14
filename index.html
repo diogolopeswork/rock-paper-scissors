@@ -7,69 +7,107 @@
 	<!-- displays site properly based on user's device -->
 
 	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/style.css">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
 	<title>Frontend Mentor | Rock, Paper, Scissors</title>
-</head>
-<body onload="toggleRules()">
 
-	<div class="container header">
-		<div class="row">
-			<div class="score-board col-12">
-				<div class="col-6 score-left">
-					<h2>Rock</h2>
-					<h2>Paper</h2>
-					<h2>Scissors</h2>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+	<div class="container">
+
+		<header>
+			<img src="images/logo-bonus.svg" class="logo" alt="rock paper scissors lizard spock">
+
+			<article class="score">
+				<h6 class="score__title">score</h6>
+				<p class="score__value">0</p>
+			</article>
+		</header>
+
+		<main>
+			<div class="game-wrapper">
+				<div class="game-wrapper__row">
+					<button class="game-wrapper__btn" data-choice="scissors" aria-label="Scissors"></button>
 				</div>
-				<div class="col-6 score-right">
-					<div class="score-bg">
-						<p class="score-text">Score</p>
-						<h1 id="score" class="score-text">12</h1>
+				<div class="game-wrapper__row">
+					<button class="game-wrapper__btn" data-choice="spock" aria-label="Spock"></button>
+					<button class="game-wrapper__btn" data-choice="paper" aria-label="Paper"></button>
+				</div>
+				<div class="game-wrapper__row">
+					<button class="game-wrapper__btn" data-choice="lizard" aria-label="Lizard"></button>
+					<button class="game-wrapper__btn" data-choice="rock" aria-label="Rock"></button>
+				</div>
+			</div>
+
+			<div class="results hidden">
+				<div class="results__user-choice">
+					<h2 class="results__header">You Picked</h2>
+					<div class="results__choice">
+						<div class="results__choice-placeholder"></div>
+						<div class="results__choice-ripples hidden">
+							<div class="ripple"></div>
+							<div class="ripple"></div>
+							<div class="ripple"></div>
+						</div>
+						<div class="results__choice-btn hidden"></div>
+					</div>
+				</div>
+				<div class="results__play-again hidden">
+					<h1 class="results__header"></h1>
+					<button id="play-again" class="hidden">Play Again</button>
+				</div>
+				<div class="results__comp-choice">
+					<h2 class="results__header">The House Picked</h2>
+					<div class="results__choice">
+						<div class="results__choice-placeholder"></div>
+						<div class="results__choice-ripples hidden">
+							<div class="ripple"></div>
+							<div class="ripple"></div>
+							<div class="ripple"></div>
+						</div>
+						<div class="results__choice-btn hidden"></div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
+		</main>
 
-	<div class="cotainer-fluid game">
-
-	</div>
-
-	<div class="container rules" id="rules">
-		<div class="col-12">
-			<h2>Rules</h2>
-		</div>
-		<div class="rules-active" id="rules-active">
-			<div class="col-12 rules-header">
-				<div class="row">
-					<h2 class="score-text">Rules</h2>
-					<img class="img-responsive" id="close" src="/images/icon-close.svg" alt="cross">
-				</div>
+		<footer>
+			<div class="rules">
+				<button id="rules">rules</button>
 			</div>
-			<div class="rules-content">
-				<img src="/images/image-rules.svg" alt="rules">
-			</div>
-		</div>
+
+			<p class="attribution">
+				Challenge by <a href="https://www.frontendmentor.io?ref=challenge" rel="noopener noreferrer"
+					target="_blank">Frontend Mentor</a>. Coded by <a href="https://github.com/diogolopeswork">Diogo Lopes</a>.
+			</p>
+		</footer>
+
 	</div>
 
-	<!-- 	Score
-		Rules
-
-		You Picked
-		The House Picked
-
-		You Win
-		You Lose
-
-		Play Again -->
-
-	<div class="attribution">
-		Challenge by <a href="https://github.com/diogolopeswork" target="_blank">Frontend Mentor</a>.
-		Coded by <a href="#">Diogo Lopes</a>.
+	<div class="modal hidden">
+		<div class="modal__dialog">
+			<div class="modal__header">
+				<h2>RULES</h2>
+				<span class="modal__close" role="button" aria-label="close rules"><img src="images/icon-close.svg"
+						alt="close"></span>
+			</div>
+			<div class="modal__body">
+				<img src="images/image-rules-bonus.svg" alt="">
+			</div>
+			<div class="modal__footer">
+				<span class="modal__close" role="button" aria-label="close rules"><img src="images/icon-close.svg"
+						alt="close"></span>
+			</div>
+		</div>
 	</div>
 
 	<script src="js/app.js"></script>
 </body>
+
 </html>
